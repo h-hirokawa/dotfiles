@@ -1,0 +1,12 @@
+/.config/**
+
+!/.config/fish
+!/.config/fish/**
+
+!/.config/iterm2
+/.config/iterm2/*
+!/.config/iterm2/profiles.json
+
+!/.config/karabiner
+/.config/karabiner/*
+!/.config/karabiner/karabiner.json

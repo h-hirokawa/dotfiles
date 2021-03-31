@@ -1,0 +1,33 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: false
+configure_osx: true
+configure_sudoers: false
+
+dotfiles_repo: https://github.com/h-hirokawa/dotfiles.git
+dotfiles_repo_version: main
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Developer/src/github.com/h-hirokawa/dotfiles
+dotfiles_files:
+  - .config
+  - .czrc
+  - .gitconfig
+  - .gitignore.global
+  - .osx
+
+homebrew_brewfile_dir: "{{ dotfiles_repo_local_destination }}"
+homebrew_taps: []
+homebrew_installed_packages: []
+homebrew_cask_apps: []
+
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+npm_packages:
+  - commitizen
+  - cz-conventional-changelog
