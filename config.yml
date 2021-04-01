@@ -30,4 +30,3 @@ osx_script: "~/.osx --no-restart"
 
 npm_packages:
   - commitizen
-  - cz-conventional-changelog

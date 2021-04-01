@@ -16,6 +16,7 @@
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
   RUN_AS_ROOT=false
+  SUDO_USER=$USER
   printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n" | fold -s -w 80
 else
   RUN_AS_ROOT=true
@@ -269,12 +270,15 @@ if [[ "$RUN_AS_ROOT" = true ]]; then
   sudo chsh -s /usr/local/bin/fish $SUDO_USER
 fi
 
+# Install fisher
+sudo -u $SUDO_USER fish -c "curl -sL https://git.io/fisher | source && fisher update"
+
 ###############################################################################
 # iTerm                                                                      #
 ###############################################################################
 
 # Link dynamic profile file
-ln -fs ~/.config/iterm2/profiles.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/profiles.json
+sudo -u $SUDO_USER ln -fs ~/.config/iterm2/profiles.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/profiles.json
 
 # Set default theme to Dracula
 defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string Dracula
