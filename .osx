@@ -277,7 +277,7 @@ fi
 sudo -u $SUDO_USER fish -c "curl -sL https://git.io/fisher | source && fisher update"
 
 ###############################################################################
-# iTerm                                                                      #
+# iTerm                                                                       #
 ###############################################################################
 
 # Link dynamic profile file
@@ -285,6 +285,13 @@ sudo -u $SUDO_USER ln -fs ~/.config/iterm2/profiles.json ~/Library/Application\ 
 
 # Set default theme to Dracula
 sudo -u $SUDO_USER defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string Dracula
+
+###############################################################################
+# Visual Studio Code                                                          #
+###############################################################################
+
+# Install im-select
+curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sudo -u $SUDO_USER sh
 
 ###############################################################################
 # Kill/restart affected applications                                          #
