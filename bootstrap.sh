@@ -18,7 +18,7 @@ mkdir -p "$DOTFILES_PATH"
 git clone "$DOTFILES_URL" "$DOTFILES_PATH" 2> /dev/null \
   || (cd "$DOTFILES_PATH" ; git pull)
 
-/usr/bin/python3 -m pip install -U pip \
+/usr/bin/python3 -m pip install --user -U pip \
   || { curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py; /usr/bin/python3 /tmp/get-pip.py; }
 
 cd "$DEV_PLAYBOOK_PATH"
