@@ -1,14 +1,14 @@
 #!/bin/bash
 set -e
 
+xcode-select --install || true
+
 SRC_DIR=~/Developer/src
 DEV_PLAYBOOK_URL=https://github.com/geerlingguy/mac-dev-playbook.git
 DEV_PLAYBOOK_PATH=${SRC_DIR}/github.com/geerlingguy/mac-dev-playbook
 DOTFILES_URL=https://github.com/h-hirokawa/dotfiles.git
 DOTFILES_PATH=${SRC_DIR}/github.com/h-hirokawa/dotfiles
 PYTHON_VERSION=$(python3 --version | awk '{sub("\\.[0-9]+$", "", $2); print $2}')
-
-xcode-select --install || true
 
 mkdir -p "$DEV_PLAYBOOK_PATH"
 git clone "$DEV_PLAYBOOK_URL" "$DEV_PLAYBOOK_PATH" 2> /dev/null \
