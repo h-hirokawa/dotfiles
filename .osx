@@ -77,7 +77,7 @@ fi
 sudo -u $SUDO_USER defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
-sudo -u $SUDO_USER defaults write NSGlobalDomain InitialKeyRepeat -int 10
+sudo -u $SUDO_USER defaults write NSGlobalDomain InitialKeyRepeat -int 15
 sudo -u $SUDO_USER defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Disable auto-correct
@@ -265,7 +265,7 @@ sudo -u $SUDO_USER defaults write com.apple.TextEdit PlainTextEncodingForWrite -
 
 if [[ "$RUN_AS_ROOT" = true ]]; then
   # Insert fish to /etc/shells
-  if grep -q /usr/local/bin/fish /etc/shells; then
+  if ! grep -q /usr/local/bin/fish /etc/shells; then
     echo /usr/local/bin/fish | sudo tee -a /etc/shells
   fi
 
