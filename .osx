@@ -276,6 +276,9 @@ fi
 # Install fisher
 sudo -u $SUDO_USER fish -c "curl -sL https://git.io/fisher | source && fisher update"
 
+# Update completions
+sudo -u $SUDO_USER fish -c "fish_update_completions"
+
 ###############################################################################
 # iTerm                                                                       #
 ###############################################################################

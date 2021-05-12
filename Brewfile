@@ -5,15 +5,19 @@ cask_args appdir: "/Applications"
 
 brew "bitwarden-cli"
 brew "fish"
+brew "fzf"
 brew "ghq"
 brew "gibo"
 brew "git"
 brew "hub"
+brew "ipython"
 brew "jq"
 brew "lab"
 brew "node"
 brew "openssl"
 brew "pipx"
+brew "poetry"
+brew "pre-commit"
 brew "python"
 brew "pyenv"
 brew "readline"
@@ -37,4 +41,7 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "zoom"
 
-cask "font-source-han-code-jp"
+cask "font-sarasa-gothic"
+
+mas "Be Focused - Focus Timer", id: 973134470
+mas "Keka", id: 470158793
